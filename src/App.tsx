@@ -1,5 +1,6 @@
 import "./App.css";
 import HomePage from "./Components/HomePage/HomePage";
+import MenuBar from "./Components/MenuBar/MenuBar";
 import ProjectsList from "./Components/ProjectsList/ProjectsList";
 import { ProjectsListItemType } from "./Components/ProjectsList/ProjectsListItem/ProjectsListItem";
 
@@ -30,7 +31,13 @@ const myProjectList: ProjectsListItemType[] = [
 function App() {
   return (
     <div>
-      <HomePage></HomePage>
+      <span className="header-container">
+        <HomePage></HomePage>
+        <div className="spacer"></div>
+        <div className="menu-bar-container">
+          <MenuBar></MenuBar>
+        </div>
+      </span>
       <ProjectsList projectList={myProjectList} sortBy={"name"}></ProjectsList>
     </div>
   );

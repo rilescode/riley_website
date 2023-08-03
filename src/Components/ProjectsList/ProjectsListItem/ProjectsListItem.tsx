@@ -1,3 +1,5 @@
+import React from "react";
+import "./ProjectsListItem.css";
 interface ProjectsListItemProps {
   project: ProjectsListItemType;
   link?: string;
@@ -16,6 +18,10 @@ const ProjectsListItem: React.FC<ProjectsListItemProps> = ({
     </div>
   );
 };
+
+function titleCase(str: string) {
+  // return str.charAt(0).toLocaleUpperCase() + str.substr(1).toLowerCase();
+}
 
 function formatDate(dateString: string) {
   return "Date: " + dateString;

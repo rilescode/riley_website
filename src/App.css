@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.header-container {
+  display: flex;
+  align-items: center; /* Aligns items vertically in the center */
+}
+
+.menu-bar-container {
+  margin-right: auto; 
+}
+
+.spacer {
+  flex-grow: 1;
+}

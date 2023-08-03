@@ -1,20 +1,19 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
 
 interface ButtonProps {
   title: string;
-  link: string; // The route path to the component you want to navigate to
+  link?: string; // The route path to the component you want to navigate to
 }
 
 const Button: React.FC<ButtonProps> = ({ title, link }) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate(link);
-  };
+  // const handleClick = () => {
+  //   link && navigate(link);
+  // };
 
   return (
-    <button className="button" onClick={handleClick}>
+    <button className="button">
       <h1>{title}</h1>
     </button>
   );
