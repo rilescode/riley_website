@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import HomePage from "./Components/HomePage/HomePage";
+import ProjectsList from "./Components/ProjectsList/ProjectsList";
+import { ProjectsListItemType } from "./Components/ProjectsList/ProjectsListItem/ProjectsListItem";
+
+// import About component
+// import ContactUs component
+
+const myProjectList: ProjectsListItemType[] = [
+  {
+    title: "project1",
+    date: "09/28/2002",
+    content: "project 1 description",
+    number: 1,
+  },
+  {
+    title: "project2",
+    date: "09/28/2002",
+    content: "project 2 description",
+    number: 2,
+  },
+  {
+    title: "project3",
+    date: "09/28/2002",
+    content: "project 3 description",
+    number: 3,
+  },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <HomePage></HomePage>
+      <ProjectsList projectList={myProjectList} sortBy={"name"}></ProjectsList>
     </div>
   );
 }
