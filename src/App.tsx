@@ -1,45 +1,41 @@
 import "./App.css";
+import AboutMe from "./Components/AboutMe.tsx/AboutMe";
 import HomePage from "./Components/HomePage/HomePage";
-import MenuBar from "./Components/MenuBar/MenuBar";
-import ProjectsList from "./Components/ProjectsList/ProjectsList";
-import { ProjectsListItemType } from "./Components/ProjectsList/ProjectsListItem/ProjectsListItem";
 
 // import About component
 // import ContactUs component
 
-const myProjectList: ProjectsListItemType[] = [
-  {
-    title: "project1",
-    date: "09/28/2002",
-    content: "project 1 description",
-    number: 1,
-  },
-  {
-    title: "project2",
-    date: "09/28/2002",
-    content: "project 2 description",
-    number: 2,
-  },
-  {
-    title: "project3",
-    date: "09/28/2002",
-    content: "project 3 description",
-    number: 3,
-  },
-];
+const currentPageText = "Home Page";
+let currentPage = 1;
+
+const sampleUser = {
+  name: "Riley",
+  email: "myEmail@gmail.com",
+  phone: "123-456-7890",
+  github: "https://github.com/rilescode",
+  linkedin: "https://www.linkedin.com/in/riley-crahen-1a65b21a5/",
+  resume: "riley_resume.pdf",
+  summary: "here is a long summary aboutme",
+};
+
+enum Page {
+  Home,
+  About,
+  Projects,
+}
 
 function App() {
   return (
-    <div>
-      <span className="header-container">
-        <HomePage></HomePage>
-        <div className="spacer"></div>
-        <div className="menu-bar-container">
-          <MenuBar></MenuBar>
-        </div>
-      </span>
-      <ProjectsList projectList={myProjectList} sortBy={"name"}></ProjectsList>
-    </div>
+    <>
+      {/* <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/products" element={<Projects />} />
+      </Routes> */}
+      {currentPage === Page.Home && <HomePage />}
+      {currentPage === Page.About && <AboutMe user={sampleUser}></AboutMe>}
+    </>
   );
 }
 

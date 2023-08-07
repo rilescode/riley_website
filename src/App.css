@@ -49,3 +49,7 @@
 .spacer {
   flex-grow: 1;
 }
+.header {
+  font-size: 2em;
+  font-weight: bold;
+}

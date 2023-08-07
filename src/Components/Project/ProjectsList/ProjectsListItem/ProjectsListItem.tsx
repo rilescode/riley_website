@@ -13,25 +13,22 @@ const ProjectsListItem: React.FC<ProjectsListItemProps> = ({
     <div className="container">
       <div className="title">{project.title}</div>
       <div className="text">{formatDate(project.date)}</div>
-      <div className="text">{project.content}</div>
+      <div className="text">{project.summary}</div>
       {link && <div className="link">{link}</div>}
     </div>
   );
 };
 
-function titleCase(str: string) {
-  // return str.charAt(0).toLocaleUpperCase() + str.substr(1).toLowerCase();
-}
-
-function formatDate(dateString: string) {
+// TODO: move into string functions
+export const formatDate = (dateString: string) => {
   return "Date: " + dateString;
-}
+};
 
 export type ProjectsListItemType = {
   title: string;
   date: string;
-  content: string;
   number: number;
+  summary: string;
 };
 
 export default ProjectsListItem;
