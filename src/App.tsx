@@ -1,13 +1,16 @@
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
+
 import AboutMe from "./Components/AboutMe.tsx/AboutMe";
 import Admin from "./Components/Admin/Admin";
+import Header from "./Components/Header/Header";
 import HomePage from "./Components/HomePage/HomePage";
 
 // import About component
 // import ContactUs component
 
 const currentPageText = "Home Page";
-let currentPage = 0;
+let currentPage = 3;
 
 const sampleUser = {
   name: "Riley",
@@ -19,7 +22,7 @@ const sampleUser = {
   summary: "here is a long summary aboutme",
 };
 
-enum Page {
+export enum Page {
   Home,
   About,
   Projects,
@@ -28,20 +31,17 @@ enum Page {
 
 function App() {
   return (
-    <>
-      {/* <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/products" element={<Projects />} />
-      </Routes> */}
-      {/* This is the current */}
-      {currentPage === Page.Home && <HomePage />}
-      {currentPage === Page.About && <AboutMe user={sampleUser}></AboutMe>}
-      {currentPage === Page.Admin && <Admin></Admin>}
+    <Router>
+      {/* Add a navigation menu with links */}
+      <Header isAdmin={true}></Header>
 
-      {}
-    </>
+      {/* Define the routes */}
+      <Routes>
+        <Route path="/homepage" element={<HomePage />} />
+        <Route path="/about" element={<AboutMe user={sampleUser} />} />
+        <Route path="/admin" element={<Admin />} />
+      </Routes>
+    </Router>
   );
 }
 

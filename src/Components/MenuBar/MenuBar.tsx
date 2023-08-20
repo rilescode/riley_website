@@ -1,21 +1,34 @@
-import * as React from "react";
-import Button from "../Button/Button";
+import React from "react";
+import { Link } from "react-router-dom";
+import "./MenuBar.css";
 
 interface MenuBarProps {
   isAdmin?: boolean;
-  navigation: any;
 }
 
-const MenuBar: React.FC<MenuBarProps> = ({ isAdmin, navigation }) => {
+const MenuBar: React.FC<MenuBarProps> = ({ isAdmin }) => {
   return (
-    <div>
-      <Button
-        title="Home"
-        // onPress={() => navigation.navigate("HomePage")}
-      ></Button>
-      <Button title="About Me"></Button>
-      {isAdmin && <Button title="Admin"></Button>}
-    </div>
+    <nav>
+      <ul>
+        <div className="button">
+          <Link to="/homepage" className="link-button">
+            <div className="link-content">Home</div>
+          </Link>
+        </div>
+        <div className="button">
+          <Link to="/about" className="link-button">
+            <div className="link-content">About</div>
+          </Link>
+        </div>
+        {isAdmin && (
+          <div className="button">
+            <Link to="/admin" className="link-button">
+              <div className="link-content">Admin</div>
+            </Link>
+          </div>
+        )}
+      </ul>
+    </nav>
   );
 };
 

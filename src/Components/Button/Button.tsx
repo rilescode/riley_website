@@ -2,10 +2,10 @@ import React from "react";
 
 interface ButtonProps {
   title: string;
-  link?: string; // The route path to the component you want to navigate to
+  onPress?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ title, link }) => {
+const Button: React.FC<ButtonProps> = ({ title, onPress }) => {
   // const navigate = useNavigate();
 
   // const handleClick = () => {

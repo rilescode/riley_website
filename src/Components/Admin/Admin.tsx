@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Project } from "../../types/Types";
+import "./Admin.css";
 
 function createDBProject(project: Project) {
   //create a new project in the db table projects that stores all this
@@ -39,61 +40,77 @@ const Admin = () => {
   };
 
   return (
-    <div>
-      <div>
-        <div className="titleText">Project Name</div>
+    <div className="container">
+      <div className="title">Create a New Project</div>
+      <div className="form-group">
+        <label className="text">Project Name</label>
         <input
-          // make this input required
+          className="input"
           type="text"
           name="title"
           placeholder="Enter Project Name"
           value={project.title}
           onChange={handleInputChange}
+          required
         />
       </div>
 
-      <input
-        type="date"
-        name="date"
-        placeholder="Enter Project Date"
-        value={project.date}
-        onChange={handleInputChange}
-      />
-      <input
-        type="text"
-        name="fullDescription"
-        placeholder="Enter Project Description"
-        value={project.fullDescription}
-        onChange={handleInputChange}
-      />
-      <input
-        type="number"
-        name="number"
-        placeholder="Enter Project Number"
-        value={project.number}
-        onChange={handleInputChange}
-      />
-      <input
-        type="text"
-        name="summary"
-        placeholder="Enter Project Summary"
-        value={project.summary}
-        onChange={handleInputChange}
-      />
-      <input
-        type="text"
-        name="githubLink"
-        placeholder="Enter GitHub Link"
-        value={project.githubLink}
-        onChange={handleInputChange}
-      />
-      <input
-        type="file"
-        accept="image/*"
-        name="image"
-        onChange={handleImageChange}
-      />
-      <button onClick={createProject}>Create Project</button>
+      <div className="form-group">
+        <label className="text">Project Date</label>
+        <input
+          className="input"
+          type="date"
+          name="date"
+          value={project.date}
+          onChange={handleInputChange}
+        />
+      </div>
+
+      <div className="form-group">
+        <label className="text">Project Description</label>
+        <input
+          className="long-input"
+          type="text"
+          name="fullDescription"
+          placeholder="Enter Project Description"
+          value={project.fullDescription}
+          onChange={handleInputChange}
+        />
+      </div>
+
+      <div className="form-group">
+        <label className="text">Project Summary</label>
+        <input
+          type="text"
+          name="summary"
+          placeholder="Enter Project Summary"
+          value={project.summary}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div className="form-group">
+        <label className="text">Project GitHub Link</label>
+        <input
+          type="text"
+          name="githubLink"
+          placeholder="Enter GitHub Link"
+          value={project.githubLink}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div className="form-group">
+        <label className="text">Project Image</label>
+        <input
+          className="input"
+          type="file"
+          accept="image/*"
+          name="image"
+          onChange={handleImageChange}
+        />
+      </div>
+      <button className="create-button" onClick={createProject}>
+        Create Project
+      </button>
     </div>
   );
 };

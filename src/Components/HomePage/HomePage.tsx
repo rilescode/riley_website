@@ -1,6 +1,4 @@
 import { Project } from "../../types/Types";
-import { HOME_PAGE_TITLE } from "../../types/constants";
-import Header from "../Header/Header";
 import ProjectsList from "../Project/ProjectsList/ProjectsList";
 import { ProjectsListItemType } from "../Project/ProjectsList/ProjectsListItem/ProjectsListItem";
 
@@ -43,7 +41,7 @@ const projectListItems = projects.map((project) => {
 const HomePage = () => {
   return (
     <div>
-      <Header pageName={HOME_PAGE_TITLE} isAdmin={true}></Header>
+      {/* <Header pageName={HOME_PAGE_TITLE} isAdmin={true}></Header> */}
       <ProjectsList
         projectList={projectListItems}
         sortBy={"name"}
