@@ -1,12 +1,13 @@
 import "./App.css";
 import AboutMe from "./Components/AboutMe.tsx/AboutMe";
+import Admin from "./Components/Admin/Admin";
 import HomePage from "./Components/HomePage/HomePage";
 
 // import About component
 // import ContactUs component
 
 const currentPageText = "Home Page";
-let currentPage = 1;
+let currentPage = 0;
 
 const sampleUser = {
   name: "Riley",
@@ -22,6 +23,7 @@ enum Page {
   Home,
   About,
   Projects,
+  Admin,
 }
 
 function App() {
@@ -33,8 +35,12 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Projects />} />
       </Routes> */}
+      {/* This is the current */}
       {currentPage === Page.Home && <HomePage />}
       {currentPage === Page.About && <AboutMe user={sampleUser}></AboutMe>}
+      {currentPage === Page.Admin && <Admin></Admin>}
+
+      {}
     </>
   );
 }

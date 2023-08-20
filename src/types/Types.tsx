@@ -10,6 +10,8 @@ export type Project = {
   number: number;
   summary?: string;
   githubLink?: string;
+  image?: File | null;
+  creator?: User;
 };
 
 // User types
