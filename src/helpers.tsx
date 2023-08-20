@@ -1,12 +1,11 @@
-export function getPageName(location: Location) {
-  switch (location.pathname) {
-    case "/homepage":
-      return "Home";
-    case "/about":
-      return "About";
-    case "/admin":
-      return "Admin";
-    default:
-      return "Home";
+export function getPageName(pathname: string) {
+  if (pathname.includes("/homepage")) {
+    return "Home";
+  } else if (pathname.includes("/about")) {
+    return "About";
+  } else if (pathname.includes("/admin")) {
+    return "Admin";
+  } else {
+    return "Home";
   }
 }

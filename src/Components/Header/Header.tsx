@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import { getPageName } from "../../helpers";
 import MenuBar from "../MenuBar/MenuBar";
 
@@ -6,8 +7,8 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ isAdmin }) => {
-  // const location = useLocation();
-  const pageName = getPageName(window.location);
+  const location = useLocation();
+  const pageName = getPageName(location.pathname);
   return (
     <span className="header-container">
       <span className="header">{pageName}</span>
